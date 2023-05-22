@@ -10,7 +10,6 @@ class SupportController extends Controller
 {
     public function index(Support $support)
     {
-        $support = new Support();
         $supports = $support->all();
         return view('admin/supports/index', compact('supports'));
     }
@@ -20,6 +19,6 @@ class SupportController extends Controller
     }
 
     public function store(Request $request){
-        dd($request->all());
+        
     }
 }
