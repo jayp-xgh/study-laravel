@@ -2,7 +2,7 @@
   body{
     height: 100vh;
   }
-  body,form{
+  body{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,10 +12,7 @@
     color: #ccddff;
     font-family: 'Inter', sans-serif;
   }
-  form{
-    align-items: flex-start;
 
-  }
   input, button, textarea{
     padding: 10px;
     border-radius: 5px;
@@ -59,27 +56,11 @@
     color: #99ffdd;
     border-color: #99ffdd; 
   }
-  
 </style>
-<h1>Listagem do supporte</h1>
-<a href="{{ route('supports.create')}}">Criar duvida</a>
-<table>
-  <thead>
-    <th>assuntos</th>
-    <th>status</th>
-    <th>descrição</th>
-    <th>links</th>
-  </thead>
-  <tbody>
-    @foreach ($supports as $support)
-      <tr>
-        <td>{{ $support->subject }}</td>
-        <td>{{ $support->status }}</td>
-        <td>{{ $support->body }}</td>
-        <td>
-          <a href="{{ route('supports.show', $support->id) }}">></a>
-        </td>
-    </tr>   
-    @endforeach
-  </tbody>
-</table>
+<h1>Detalhes da dúvida {{ $support->id }}</h1>
+
+<ul>
+  <li>Assunto: {{ $support->subject }}</li>
+  <li>Descrição: {{ $support->body }}</li>
+  <li>Status: {{ $support->status }}</li>
+</ul>
