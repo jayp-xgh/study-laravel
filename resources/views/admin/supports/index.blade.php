@@ -50,7 +50,7 @@
   }
   a{
     color: #ccddff;
-    border: solid 2px #ccddff;
+    border: solid 2px #3d4b66;
     border-radius: 5px;
     padding: 10px;
     text-decoration: none; 
@@ -61,8 +61,8 @@
   }
   
 </style>
-<h1>Listagem do supporte</h1>
-<a href="{{ route('supports.create')}}">Criar duvida</a>
+<h1>listinha de merda</h1>
+<a href="{{ route('supports.create')}}">Criar duvida 🐒</a>
 <table>
   <thead>
     <th>assuntos</th>
@@ -77,7 +77,8 @@
         <td>{{ $support->status }}</td>
         <td>{{ $support->body }}</td>
         <td>
-          <a href="{{ route('supports.show', $support->id) }}">></a>
+          <a href="{{ route('supports.show', $support->id) }}">ver 👺</a>
+          <a href="{{ route('supports.edit', $support->id) }}">editar 🐘</a>
         </td>
     </tr>   
     @endforeach
