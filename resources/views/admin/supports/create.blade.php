@@ -47,11 +47,18 @@
     cursor: pointer;
   }
 </style>
+
+
+@if($errors->any())
+  @foreach ($errors->all() as $error)
+    <p>{{ $error }}</p>
+  @endforeach
+@endif
 <form  action=" {{ route('supports.store')}} " method="POST">
   @csrf()
   <label for="assunto">assunto</label>
-  <input type="text" id="assunto" placeholder="exemplo: " name="subject">
+  <input type="text" id="assunto" placeholder="exemplo: " name="subject" value="{{ old('subject') }}">
   <label for="descricao">descrição</label>
-  <textarea name="body" id="descricao" cols="30" rows="5" placeholder="exemplo:"></textarea>
+  <textarea name="body" id="descricao" cols="30" rows="5" placeholder="exemplo:">{{ old('body') }}</textarea>
   <button type="submit">Enviar</button>
 </form>
