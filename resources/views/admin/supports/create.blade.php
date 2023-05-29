@@ -49,7 +49,7 @@
 </style>
 
 
-@if($errors->any())
+@if($errors->any())pcon
   @foreach ($errors->all() as $error)
     <p>{{ $error }}</p>
   @endforeach
