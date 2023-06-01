@@ -1,17 +1,16 @@
 <?php
 
-namespace App\DTOs;
+namespace App\DTO;
 
-use Illuminate\Contracts\Cache\Store;
 use App\Http\Requests\StoreUpdateSupport;
 
-class UpdateSupportDTO 
+class UpdateSupportDTO  
 {
   public function __construct (
     public string $id,
     public string $subject,
     public string $status,
-    public string $body,
+    public string $body
   ) {}
 
   public static function makeFromRequest(StoreUpdateSupport $request): self
@@ -20,7 +19,7 @@ class UpdateSupportDTO
       $request->id,
       $request->subject,
       'a',
-      $request->body,
+      $request->body
     );
   }
 }
