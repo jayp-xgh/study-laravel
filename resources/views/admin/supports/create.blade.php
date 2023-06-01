@@ -48,17 +48,7 @@
   }
 </style>
 
-
-@if($errors->any())pcon
-  @foreach ($errors->all() as $error)
-    <p>{{ $error }}</p>
-  @endforeach
-@endif
+<x-alert/>
 <form  action=" {{ route('supports.store')}} " method="POST">
-  @csrf()
-  <label for="assunto">assunto</label>
-  <input type="text" id="assunto" placeholder="exemplo: " name="subject" value="{{ old('subject') }}">
-  <label for="descricao">descrição</label>
-  <textarea name="body" id="descricao" cols="30" rows="5" placeholder="exemplo:">{{ old('body') }}</textarea>
-  <button type="submit">Enviar</button>
+  @include('admin.supports.partials.form')
 </form>
